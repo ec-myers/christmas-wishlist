@@ -1,10 +1,11 @@
 class Trip {
-  constructor(id, destination, duration, type, activities) {
+  constructor(id, destination, startDate, endDate, type, description) {
     this.id = id;
     this.destination = destination;
-    this.duration = duration;
+    this.startDate = startDate;
+    this.endDate = endDate;
     this.type = type;
-    this.activities = activities;
+    this.description = description;
   }
 
   saveToStorage(array) {
