@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <title>Trip Planner</title>
+</head>
+<body>
+  <aside>
+    <h1>Trip Planner</h1>
+    <h2>Filter Your Trips</h2>
+    <ul>
+      <li>Domestic</li>
+      <li>International</li>
+    </ul>
+  </aside>
+  <section>
+    <form>
+      <div class="div-destination">
+        <label>Destination</label>
+        <input type="text" placeholder="Destination"></input>
+      </div>
+      <div class="div-duration">
+        <label>Duration</label>
+        <input type="text" placeholder="Start date"></input>
+        <input type="text" placeholder="End date"></input>
+      </div>
+      <div class="div-type">
+      <label>Trip Type</label>
+        <select>
+          <option>Domestic</option>
+          <option>International</option>
+        </select>
+      </div>
+      <div class="div-activity">
+        <label>Activity Preferences</label> 
+        <input type="checkbox" name="romantic">romantic</input>
+        <input type="checkbox" name="museums">museums</input>
+        <input type="checkbox" name="outdoors">outdoors</input>
+        <input type="checkbox" name="beaches">beaches</input>
+        <input type="checkbox" name="relaxing">relaxing</input>
+      </div>
+      <button type="button" id="btn-save" disabled>Save</button>
+    </form>
+  </section>
+  <section>
+    <p>“I don't know where I'm going, but I'm on my way”</p>
+  </section>
+  <script type="text/javascript src="trip.js"></script>
+  <script type="text/javascript src="index.js"></script>
+</body>
+</html>
