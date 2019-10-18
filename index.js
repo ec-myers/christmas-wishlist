@@ -8,10 +8,14 @@ let description = document.querySelector('#description');
 let btnSave = document.querySelector('#btn-save');
 let cardArea = document.querySelector('.card-area');
 let tripPrompt = document.querySelector('#no-trips');
+let intTrips = document.querySelector('#international');
+let domTrips = document.querySelector('#domestic');
 
 formInputs.addEventListener('keyup', handleFormInputs);
 btnSave.addEventListener('click', addTrip);
 cardArea.addEventListener('click', deleteCard);
+intTrips.addEventListener('click', returnInternationalArray);
+domTrips.addEventListener('click', returnDomesticArray);
 window.addEventListener('DOMContentLoaded', handlePageLoad);
 
 function handlePageLoad() {
@@ -64,6 +68,20 @@ function findTrip(e) {
   });
 
   return trip;
+}
+
+function returnDomesticArray() {
+  let domesticTrips = tripsArray.filter(trip => trip.type === 'Domestic');
+
+  cardArea.innerHTML = '';
+  populateCards(domesticTrips);
+}
+
+function returnInternationalArray() {
+  let internationalTrips = tripsArray.filter(trip => trip.type === 'International');
+  
+  cardArea.innerHTML = '';
+  populateCards(internationalTrips);
 }
 
 function displayCard(trip) {
