@@ -1,6 +1,7 @@
 * {
   box-sizing: border-box;
-  font-family: 'Hepta Slab', serif;
+  font-family: 'Montserrat', sans-serif;
+  color: #00004d;
   margin: 0;
   padding: 0;
 }
@@ -17,8 +18,9 @@ aside {
   flex-direction: column;
   align-items: center;
   background: #58acbe;
-  height: 100vh;
-  width: 15%;
+  width: 20%;
+  padding: 10px;
+  color: #00004d;
 }
 
 aside ul {
@@ -35,6 +37,9 @@ ul {
 li {
   height: 40px;
   padding: 7px 8%;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 li:hover {
@@ -51,26 +56,56 @@ li:active {
 }
 
 aside h1 {
-  margin: 20px;
-  font-size: 30px;
-  height: 75px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 45px;
+  height: 50px;
+  width: 100%;
+  text-align: center;
 }
 
 aside h2 {
-
+  font-size: 24px;
+  margin-top: 8px;
+  margin-bottom: 35px;
+  width: 100%;
+  text-align: center;
+  /* border-bottom: 2px solid #00004d; */
 }
 
+.border-div {
+  border-bottom: 5px dotted #00004d;
+  width: 100%;
+  margin: 20px 0 20px 0;
+}
+
+aside button {
+  background-color: #2c8080;
+  border-radius: 2px;
+  border: none;
+  color: #ffffff;
+  font-size: 22px;
+  height: 50px;
+  margin-bottom: 5px;
+  margin-top: 15px;
+  width: 90%;
+  cursor: pointer;
+}
+
+#view-all:hover {
+  background-color: #e79092;
+  border: solid 1px #e79092;
+  transition: 0.2s;
+}
 
 main {
-  display: flex;
-  flex-direction: column;
   background: #c0e5ec;
-  width: 85%;
+  width: 80%;
 }
 
 /* Card Area */
 
-.section-card {
+.card-area {
   background-color: #EAEAF4;
   display: grid;
   grid-gap: 0 50px;
@@ -78,10 +113,12 @@ main {
   justify-items: center;
   min-height: 800px;
   padding: 20px 60px;
+
 }
 
 .trip-card {
   box-shadow: 0 0 10px #666666;
+  border-radius: 2px;
   height: 339px;
   width: 100%;
   border: solid 3px #58acbe;
@@ -119,7 +156,8 @@ main {
 }
 
 .card-body {
-  border: 2px dashed #58acbe;
+  border: 2px dotted #58acbe;
+  border-radius: 2px;
   min-height: 120px;
   padding: 10px;
   overflow: scroll;
@@ -135,6 +173,7 @@ main {
   width: 25px;
   float: right;
   margin: 10px;
+  cursor: pointer;
 }
 
 .img-delete:hover {
@@ -164,6 +203,7 @@ form {
   border-radius: 3px;
   padding: 20px;
   margin: 20px;
+  width: 400px;
 }
 
 form input:focus {
@@ -181,6 +221,7 @@ form input:focus {
   height: 50px;
   margin: 5px 0;
   padding-left: 10px;
+  width: 100%;
 }
 
 .div-duration input {
@@ -192,6 +233,7 @@ form input:focus {
   height: 50px;
   margin: 5px 0;
   padding-left: 10px;
+  width: 100%;
 }
 
 .div-type {
@@ -199,7 +241,7 @@ form input:focus {
   flex-direction: column;
 }
 
-.div-type input {
+.div-type select {
   border-radius: 3px;
   border: solid 1.5px #58acbe;
   font-size: 18px;
@@ -231,10 +273,10 @@ input:focus {
 }
 
 #btn-save {
-  background-color: #58acbe;
+  background-color: #2c8080;
   border-radius: 2px;
   border: none;
-  border: solid 1px #58acbe;
+  border: solid 1px #2c8080;
   color: #ffffff;
   font-size: 22px;
   height: 50px;
@@ -249,13 +291,13 @@ input:focus {
 }
 
 #btn-save:hover {
-  background-color: #1c1c61;
-  border: solid 1px #c5bad9;
+  background-color: #e79092;
+  border: solid 1px #e79092;
   transition: 0.2s;
 }
 
 #btn-save:active {
-  background-color: #16164d;
-  border: solid 1px #c5bad9;
+  background-color: #2c8080;
+  border: solid 1px #2c8080;
   transition: 0.5s;
 }
