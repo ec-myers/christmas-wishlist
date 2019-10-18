@@ -21,9 +21,4 @@ class Trip {
 
     this.saveToStorage(tripsArray);
   }
-
-  updateIdea(title, body) {
-    this.title = title;
-    this.body = body;
-  }
 }

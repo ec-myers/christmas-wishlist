@@ -10,11 +10,16 @@
 <body>
   <aside>
     <h1>Trip Mate</h1>
-    <h2>Filter Trips</h2>
+    <div class="border-div"></div>
+    <img src="images/pineapple.svg">
+    <div class="border-div"></div>
+    <h2>Filter By Region</h2>
     <ul>
-      <li>Domestic</li>
-      <li>International</li>
+      <li id="domestic">Domestic</li>
+      <li id="international">International</li>
     </ul>
+    <button id="view-all">View All</button>
+    <div class="border-div"></div>
   </aside>
   <main>
     <section class="section-form">
@@ -24,18 +29,18 @@
           <input type="text" placeholder="Destination" id="destination"></input>
         </div>
         <div class="div-duration">
-          <label>Duration</label>
+          <label>Dates</label>
           <input type="text" placeholder="Start date(mm/dd)" id="start-date"></input>
           <input type="text" placeholder="End date(mm/dd)" id="end-date"></input>
         </div>
         <div class="div-type">
-          <label>Trip Type</label>
+          <label>Region</label>
           <select id="type">
             <option>Domestic</option>
             <option>International</option>
           </select>
         </div>
-        <input placeholder="description" id="description"></input>
+        <input placeholder="Must see..." id="description"></input>
         <button type="button" id="btn-save" disabled>Save</button>
       </form>
     </section>
