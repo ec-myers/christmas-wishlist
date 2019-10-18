@@ -46,6 +46,7 @@ function addTrip() {
   displayCard(trip);
   btnSave.disabled = true;
   displayNoTripsMessage();
+  resetInputs();
 }
 
 function deleteCard(e) {
@@ -90,4 +91,11 @@ function displayNoTripsMessage() {
   } else {
     tripPrompt.classList.add('hidden');
   }
+}
+
+function resetInputs() {
+  destination.value = '';
+  startDate.value = '';
+  endDate.value = '';
+  description.value = '';
 }
