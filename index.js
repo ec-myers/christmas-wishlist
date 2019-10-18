@@ -10,6 +10,7 @@ let cardArea = document.querySelector('.card-area');
 
 formInputs.addEventListener('keyup', handleFormInputs);
 btnSave.addEventListener('click', addTrip);
+cardArea.addEventListener('click', deleteCard);
 
 function handleFormInputs(e) {
   if (destination.value && startDate.value && endDate.value) {
@@ -24,6 +25,22 @@ function addTrip() {
   trip.saveToStorage(tripsArray);
   displayCard(trip);
   btnSave.disabled = true;
+}
+
+function deleteCard(e) {
+  e.target.closest('.trip-card').remove();
+  var trip = findTrip(e);
+
+  trip.deleteFromStorage(tripsArray);
+}
+
+function findTrip(e) {
+  var tripId = e.target.closest('.trip-card').getAttribute('data-id');
+  var trip = tripsArray.find(function (trip) {
+    return trip.id === parseInt(tripId);
+  });
+
+  return trip;
 }
 
 function displayCard(trip) {
