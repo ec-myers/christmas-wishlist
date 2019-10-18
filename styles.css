@@ -28,13 +28,8 @@ aside ul {
   width: 100%;
 }
 
-ul {
-  color: #ffffff;
-  font-size: 20px;
-  font-weight: 300;
-}
-
 li {
+  font-size: 1.3em;
   height: 40px;
   padding: 7px 8%;
   cursor: pointer;
@@ -43,34 +38,27 @@ li {
 }
 
 li:hover {
-  background-color: #2c8080;
+  background-color: #e79092;
   border-left: solid 10px #c0e5ec;
   padding-left: 6%;
   transition: 0.25s;
 }
 
-li:active {
-  background-color: #2c8080;
-  border-left: solid 10px #c0e5ec;
-  transition: 0.05s;
-}
-
 aside h1 {
   margin-top: 10px;
   margin-bottom: 10px;
-  font-size: 45px;
+  font-size: 3em;
   height: 50px;
   width: 100%;
   text-align: center;
 }
 
 aside h2 {
-  font-size: 24px;
+  font-size: 1.6em;
   margin-top: 8px;
   margin-bottom: 35px;
   width: 100%;
   text-align: center;
-  /* border-bottom: 2px solid #00004d; */
 }
 
 .border-div {
@@ -212,6 +200,10 @@ form input:focus {
   transition: 0.2s;
 }
 
+.div-destination {
+  margin-bottom: 10px;
+}
+
 .div-destination input {
   display: flex;
   flex-direction: column;
@@ -222,6 +214,10 @@ form input:focus {
   margin: 5px 0;
   padding-left: 10px;
   width: 100%;
+}
+
+.div-duration {
+  margin-bottom: 10px;
 }
 
 .div-duration input {
