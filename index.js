@@ -7,15 +7,35 @@ let type = document.querySelector('#type');
 let description = document.querySelector('#description');
 let btnSave = document.querySelector('#btn-save');
 let cardArea = document.querySelector('.card-area');
+let tripPrompt = document.querySelector('#no-trips');
 
 formInputs.addEventListener('keyup', handleFormInputs);
 btnSave.addEventListener('click', addTrip);
 cardArea.addEventListener('click', deleteCard);
+window.addEventListener('DOMContentLoaded', handlePageLoad);
+
+function handlePageLoad() {
+  instantiateTrips();
+  populateCards(tripsArray);
+  displayNoTripsMessage();
+}
 
 function handleFormInputs(e) {
   if (destination.value && startDate.value && endDate.value) {
     btnSave.disabled = false;
   } 
+}
+
+function populateCards(tripsArray) {
+  tripsArray.forEach(trip => displayCard(trip))
+}
+
+function instantiateTrips() {
+  var newArray = JSON.parse(localStorage.getItem('tripsArray')).map(function (trip) {
+    return new Trip(trip.id, trip.destination, trip.startDate, trip.endDate, trip.type, trip.description);
+  });
+
+  tripsArray = newArray;
 }
 
 function addTrip() {
@@ -25,6 +45,7 @@ function addTrip() {
   trip.saveToStorage(tripsArray);
   displayCard(trip);
   btnSave.disabled = true;
+  displayNoTripsMessage();
 }
 
 function deleteCard(e) {
@@ -32,6 +53,7 @@ function deleteCard(e) {
   var trip = findTrip(e);
 
   trip.deleteFromStorage(tripsArray);
+  displayNoTripsMessage();
 }
 
 function findTrip(e) {
@@ -60,4 +82,12 @@ function displayCard(trip) {
           <img class="img-delete" src="images/delete-button.svg" alt="delete" id="btn-delete">
         </footer>
       </article>`);
+}
+
+function displayNoTripsMessage() {
+  if (tripsArray.length === 0) {
+    tripPrompt.classList.remove('hidden');
+  } else {
+    tripPrompt.classList.add('hidden');
+  }
 }
